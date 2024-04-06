@@ -1,0 +1,11 @@
+FROM mythril/myth:0.23.24
+
+ARG SOLC_VERSION=0.8.21
+
+USER root
+
+RUN pip install solc-select
+
+USER mythril
+
+RUN solc-select install ${SOLC_VERSION} && solc-select use ${SOLC_VERSION}

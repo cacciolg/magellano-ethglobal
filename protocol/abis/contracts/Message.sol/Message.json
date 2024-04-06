@@ -1,0 +1,6 @@
+[
+  "constructor()",
+  "event SetMessage(address,string)",
+  "function message() view returns (string)",
+  "function setMessage(string) payable"
+]

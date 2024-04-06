@@ -1,0 +1,77 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./protocol"
+    },
+    {
+      "path": "./services/app"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "prettier.bracketSpacing": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "eslint.workingDirectories": [
+      "src",
+      "lib",
+      "dist",
+      "infrastructure",
+      "infrastructure/*",
+      "infrastructure/**/*",
+      "services/*",
+      "services/**/*",
+      "src/**/*",
+      "lib/**/*",
+      "dist/**/*"
+    ],
+    "eslint.options": {
+      "overrideConfig": {
+        "parserOptions": {
+          "createDefaultProgram": true
+        }
+      }
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.autoIndent": "full",
+      "editor.formatOnSave": true
+    },
+    "python.analysis.autoSearchPaths": true,
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "python.analysis.fixAll": [
+      "source.convertImportFormat",
+      "source.unusedImports"
+    ],
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "rust-analyzer.linkedProjects": [
+      "adtech-core/Cargo.toml",
+      "epappas-dating-game-lp/Cargo.toml",
+      "epappas-secret-santa-lp/Cargo.toml",
+      "epappas-zero-knowledge-sudoku-lp/Cargo.toml",
+      "activitypub-federation-rust/Cargo.toml",
+      "zk-wasm/Cargo.toml",
+      "rag-cli-gpt/Cargo.toml",
+    ],
+    "slither.solcPath": "",
+    "slither.hiddenDetectors": [],
+    "[solidity]": {
+      "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+FROM python:3.10-slim
+
+ARG SOLC_VERSION=0.8.21
+
+USER root
+ENV HOME="/root"
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+WORKDIR /root
+
+RUN apt-get update && apt-get install -y \
+	libpq5 curl \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN curl -sL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh \
+  && bash /tmp/nodesource_setup.sh \
+  && apt-get install -y nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN node -v
+
+RUN pip3 --no-cache-dir install solc-select
+RUN pip3 --no-cache-dir install slither-analyzer pyevmasm
+
+RUN solc-select install ${SOLC_VERSION} && solc-select use ${SOLC_VERSION}
+
+ENTRYPOINT ["slither"]
